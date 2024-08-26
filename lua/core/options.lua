@@ -18,6 +18,7 @@ set.splitright = true         -- Vertical splits open to the right
 set.splitbelow = true         -- Horizontal splits open below
 set.fileformat = "unix"
 set.undofile = true           -- Save edit history
+set.colorcolumn = "80"          -- Border line
 
 -- Search settings
 set.ignorecase = true         -- Ignore case in search patterns
