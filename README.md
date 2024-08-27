@@ -65,7 +65,6 @@ rm -rf ~/.local/share/nvim
 git clone https://github.com/df1gg/SpectraNvim.git ~/.config/nvim && nvim
 ```
 
-- Run ```:MasonInstallAll``` command after lazy.nvim finishes downloading plugins.
 - Delete the .git folder from nvim folder.
 
 ### Update:
