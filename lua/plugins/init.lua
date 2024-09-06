@@ -40,6 +40,8 @@ return {
     { 'morhetz/gruvbox' },
     { 'tiagovla/tokyodark.nvim' },
     { 'sainnhe/gruvbox-material' },
+    { 'Mofiqul/dracula.nvim' },
 
     { 'Eandrju/cellular-automaton.nvim' },
+    { 'wakatime/vim-wakatime' },
 }

@@ -6,10 +6,10 @@ local function lspSymbol(name, icon)
     vim.fn.sign_define("DiagnosticSign" .. name, { text = icon, numhl = "Diagnostic" .. name })
 end
 
-lspSymbol("Error", "")
-lspSymbol("Warn", "")
-lspSymbol("Hint", "")
-lspSymbol("Info", "")
+lspSymbol("Error", " ")
+lspSymbol("Warn", " ")
+lspSymbol("Hint", " ")
+lspSymbol("Info", " ")
 
 -- Global diagnostic settings
 vim.diagnostic.config({
@@ -52,12 +52,16 @@ nvim_lsp.lua_ls.setup{}
 
 
 -- C#
-nvim_lsp.omnisharp.setup{
-    cmd = { "dotnet", vim.fn.expand("~/.local/share/nvim/mason/packages/omnisharp/libexec/OmniSharp.dll") }
-}
+-- nvim_lsp.omnisharp.setup{
+--     cmd = { "dotnet", vim.fn.expand("~/.local/share/nvim/mason/packages/omnisharp/libexec/OmniSharp.dll") }
+-- }
 
--- C++
-nvim_lsp.clangd.setup{}
+-- C and C++
+nvim_lsp.clangd.setup{
+    cmd = { "clangd", "--compile-commands-dir=./build" },  -- Укажите путь к compile_commands.json
+    filetypes = { "c", "cpp", "objc", "objcpp" },
+    root_dir = require'lspconfig'.util.root_pattern("compile_commands.json", ".git"),
+}
 
 -- Cmake
 nvim_lsp.neocmake.setup{}
